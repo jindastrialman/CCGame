@@ -6,5 +6,5 @@ public abstract class AbstractCard
 {
     private int _manacost;
     private AbstractCastingType _type;
-    private AbstractEffect _effect;
+    private List<AbstractEffect> _effects;
 }
