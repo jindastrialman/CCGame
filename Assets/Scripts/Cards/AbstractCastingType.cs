@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class AbstractCastingType
 {
-    public abstract void Cast();
+    public abstract void Cast(AbstractTarget self, List<AbstractTarget> targets);
 }
