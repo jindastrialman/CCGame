@@ -4,9 +4,8 @@ using UnityEngine;
 
 public abstract class AbstractCard
 {
-    private int _manacost;
-    private AbstractCastingType _type;
-    private AbstractTarget _self;
-    private List<AbstractTarget> _targets; 
-    private List<AbstractEffect> _effects;
+    protected int _manacost;
+    protected AbstractCastingType _type;
+    protected AbstractTarget _self;
+    protected List<AbstractTarget> _targets; 
 }
