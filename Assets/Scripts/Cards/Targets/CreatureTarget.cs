@@ -6,6 +6,7 @@ using System;
 public class CreatureTarget : AbstractTarget
 {
     public override event Action OnDeath;
+    public override event Action OnEffectTrigger;
 
     public override int Attack
     {
