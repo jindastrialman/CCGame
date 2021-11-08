@@ -5,13 +5,21 @@ using System;
 
 public class CreatureTarget : AbstractTarget
 {
-    public override event Action OnDeath;
-    public override event Action OnEffectTrigger;
+    protected int _attack;
 
+    public override event AbstractTargetEventDelegate OnDeath;
+    public override event AbstractTargetEventDelegate OnEffectTrigger;
+    
     public override int Attack
     {
         get;
-        set;
+    }
+
+    public CreatureTarget(int hitPoints, int attack, params AbstractEffect[] effects)
+    {
+        _hitPoints = hitPoints;
+        _attack = attack;
+        _effects = new List<AbstractEffect>(effects);
     }
 
     public override void ApplyDamage(int damage)
@@ -20,7 +28,7 @@ public class CreatureTarget : AbstractTarget
         if(_hitPoints <= 0)
         {
             if(OnDeath != null)
-                OnDeath();
+                OnDeath(this);
         }
     }
 

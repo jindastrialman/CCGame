@@ -6,6 +6,7 @@ public class DamageEffect : AbstractEffect
 {
     public override void Update()
     {
-        _targets.ApplyDamage(_strength);
+        foreach(AbstractTarget target in _targets)
+            target.ApplyDamage(_strength);
     }
 }
